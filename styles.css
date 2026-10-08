@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 18px;
+  color: #2D3748;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  min-height: 100vh;
+}
+
+header  { grid-area: header; }
+aside   { grid-area: sidebar; }
+main    { grid-area: main; }
+footer  { grid-area: footer; }
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 20px;
+  background-color: #3C8527;
+  color: #FFFFFF;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 39px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+header p {
+  margin: 0;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 4px solid #FFFFFF;
+  border-radius: 50%;
+}
+
+aside {
+  padding: 24px;
+}
+
+aside section {
+  margin-bottom: 24px;
+}
+
+aside h3 {
+  margin: 0 0 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #28651C;
+}
+
+aside .about {
+  padding: 16px;
+  background-color: #E2E8F0;
+}
+
+aside .about h3 {
+  color: #333322;
+}
+
+aside .about p {
+  margin: 0;
+}
+
+aside ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+aside a {
+  color: #2879B8;
+}
+
+main {
+  padding: 24px 32px;
+}
+
+article {
+  margin-bottom: 40px;
+  overflow: hidden; 
+}
+
+article h2 {
+  margin: 0;
+  font-size: 34px;
+  color: #28651C;
+}
+
+.post-meta {
+  margin: 4px 0 16px;
+  color: #667267;
+}
+
+.post-img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.float-left {
+  float: left;
+  margin: 4px 20px 12px 0;
+}
+
+.float-right {
+  float: right;
+  margin: 4px 0 12px 20px;
+}
+
+footer {
+  padding: 16px;
+  text-align: center;
+  background-color: #28651C;
+  color: #FFFFFF;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  article h2 {
+    font-size: 28px;
+  }
+
+  .post-img {
+    float: none;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 0 16px;
+  }
+}
